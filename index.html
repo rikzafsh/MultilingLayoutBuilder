@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Perakit Layout Multiling O</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>Perakit layout Multiling O</h1>
+  <input id="title" aria-label="Judul layout" placeholder="Judul layout">
+</header>
+<main>
+  <section class="card">
+    <div id="tabs" role="tablist"></div>
+    <p class="hint">Tab bergaris putus-putus belum dibuat: klik untuk membuatnya. Shift terisi otomatis dengan huruf besar dari Utama, dan AltGr+Shift dari AltGr.</p>
+    <div id="kb"></div>
+    <div class="bar">
+      <button id="addRow">+ Baris</button>
+      <button id="regen" hidden></button>
+      <input id="newPage" placeholder="Halaman lain (mis. meta1)" size="22" aria-label="Nama halaman baru">
+      <button id="addPage">Tambah halaman</button>
+      <button id="delPage">Hapus halaman ini</button>
+    </div>
+    <div class="bar">
+      <select id="preset" aria-label="Contoh layout"><option value="qwerty">Contoh: QWERTY</option><option value="swipe">Contoh: tombol swipe</option><option value="blank">Kosong</option></select>
+      <button id="loadPreset">Muat contoh</button>
+    </div>
+  </section>
+  <aside>
+    <section class="card" id="insp"></section>
+    <section class="card">
+      <h2>Hasil JSON</h2>
+      <textarea id="out" readonly aria-label="Hasil JSON"></textarea>
+      <div class="bar"><button class="pri" id="copy">Salin JSON</button></div>
+      <p id="msg" role="status"></p>
+      <p class="hint">Di aplikasi: buka Layouts, pilih DIY, lalu tempel JSON ini lewat tombol Layouts… (nama menu bisa sedikit berbeda antarversi).</p>
+      <details><summary>Impor layout yang sudah ada</summary>
+        <textarea id="imp" placeholder="Tempel JSON layout DIY di sini" aria-label="JSON untuk diimpor"></textarea>
+        <button id="doImp">Muat ke editor</button>
+      </details>
+    </section>
+  </aside>
+</main>
+<datalist id="spl"></datalist>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
